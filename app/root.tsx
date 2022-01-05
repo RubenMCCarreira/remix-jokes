@@ -1,4 +1,4 @@
-import { Links, LinksFunction, LiveReload, Meta, MetaFunction, Outlet, useCatch } from 'remix';
+import { Links, LinksFunction, LiveReload, Meta, MetaFunction, Outlet, Scripts, useCatch } from 'remix';
 
 import globalStylesUrl from './styles/global.css';
 import globalMediumStylesUrl from './styles/global-medium.css';
@@ -49,6 +49,7 @@ function Document({ children, title = `Remix: So great, it's funny!` }: { childr
       </head>
       <body>
         {children}
+        <Scripts />
         {process.env.NODE_ENV === 'development' ? <LiveReload /> : null}
       </body>
     </html>
